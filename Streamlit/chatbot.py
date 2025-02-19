@@ -26,13 +26,6 @@ for key, val in query_params_dict.items():
                 if val.lower() != 'none':
                     details = val
 
-
-GOOGLE_API_KEY = st.text_input("Entrez une clé API valide",type='password')
-
-genai.configure(api_key=GOOGLE_API_KEY)
-
-model = genai.GenerativeModel('gemini-2.0-flash')
-
 # Création du prompt système
 system_prompt = f"""
 Je vais te donner un ou plusieurs perssonnage fictif qui vont se battre contre un ou plusieurs personnage fictif, je veux que tu me réponde en français qui gagne et pourquoi
@@ -49,6 +42,6 @@ addons = st.text_area("Ajouter des details pour le combat",details)
 
 if st.button("Validez"):
 
-    st.write(fun.fightbot(team1,team2,addons,GOOGLE_API_KEY))
+    st.write(fun.fightbot(team1,team2,addons))
 
 

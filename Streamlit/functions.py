@@ -4,8 +4,9 @@ import pandas as pd
 import data
 
 characters_df = data.characters_df
+GOOGLE_API_KEY = st.secrets['GOOGLE_API_KEY']
 
-def fightbot(team1,team2, addons, GOOGLE_API_KEY):
+def fightbot(team1,team2, addons):
 
     genai.configure(api_key=GOOGLE_API_KEY)
     model = genai.GenerativeModel('gemini-2.0-flash')

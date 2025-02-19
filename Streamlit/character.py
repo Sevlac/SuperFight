@@ -53,9 +53,7 @@ if selected_character != None:
 
     addons = st.text_area("Ajouter des details pour le combat")
 
-    GOOGLE_API_KEY = st.text_input("Entrez une clé API valide",type='password')
-
     if st.button("Combattez!"):
-        st.write(fun.fightbot(team1+[name],team2,addons,GOOGLE_API_KEY))
+        st.write(fun.fightbot(team1+[name],team2,addons))
 
 
